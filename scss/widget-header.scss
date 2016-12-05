@@ -1,0 +1,59 @@
+.tp-widget-header {
+  display: block;
+  position: relative;
+  margin: 20px;
+
+  .tp-widget-header-average {
+    display: inline-block;
+    margin-bottom: 10px;
+    width: 100%;
+
+    font-weight: bold;
+    font-size: 24px;
+    text-align: center;
+    color: $header-average-color;
+  }
+
+  .tp-widget-header-info {
+    display: inline-block;
+    margin-bottom: 10px;
+    width: 100%;
+
+    font-size: 15px;
+    text-align: center;
+    color: $header-info-color;
+
+    a {
+      color: $header-info-color;
+    }
+  }
+
+  .tp-widget-header-stars {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    @include widget-star-parent-width($header-star-size, $header-star-space);
+
+    .tp-widget-header-star {
+      @include widget-star(
+        $header-star-size,
+        $header-star-space,
+        $header-star-background-color,
+        $header-star-inactive-color,
+        $header-star-font-size
+      );
+    }
+
+    .tp-widget-header-star-active {
+      @include widget-star(
+        $header-star-size,
+        $header-star-space,
+        $header-star-background-color,
+        $header-star-color,
+        $header-star-font-size
+      );
+    }
+
+  }
+}

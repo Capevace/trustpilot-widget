@@ -1,0 +1,15 @@
+@import "widget-header";
+@import "widget-content";
+
+.tp-widget-container {
+  position: relative;
+  box-sizing: border-box;
+  min-width: 320px;
+  width: $container-width;
+
+  background: $container-background-color;
+  border: 2px solid $container-border-color;
+  font-family: 'Helvetica Neue', Arial, Helvetica, sans-serif;
+
+  @include border-radius($container-border-radius);
+}

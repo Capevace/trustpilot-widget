@@ -1,0 +1,41 @@
+@mixin widget-star-parent-width($size, $space) {
+  width: 5 * $size + 5 * $space;
+}
+
+@mixin widget-star(
+  $size: 50px,
+  $space: 5px,
+  $background-color: lightgray,
+  $color: gray,
+  $font-size: 25px,
+  $use-border: false
+) {
+  display: inline-block;
+  width: $size;
+  height: $size;
+  margin-right: $space; // Removing 4px due to some weird margin glitch
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  &::after {
+    @if $use-border {
+      content: '☆';
+    } @else {
+      content: '★';
+    }
+
+    color: $color;
+
+    display: block;
+    line-height: $size;
+    text-align: center;
+
+    font-size: $font-size;
+  }
+
+  background-color: $background-color;
+
+  @include border-radius(5px);
+}
